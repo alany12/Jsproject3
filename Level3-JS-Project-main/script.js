@@ -14,26 +14,23 @@ function initialize()
 {
     gameResultPlayer = document.getElementById("playerResult");
     gameResultComputer = document.getElementById("computerResult");
-
     playerRockHTML = document.getElementById("playerR");
     playerPaperHTML = document.getElementById("playerP")
     playerScissorHTML = document.getElementById("playerS");
     playerDecisionHTML = document.getElementById("playerDecision");
-
     compRockHTML = document.getElementById("compR");
     compPaperHTML = document.getElementById("compP");
     compScissorHTML = document.getElementById("compS");
     compDecisionHTML = document.getElementById("compDecision");
     playerImgHTML = document.getElementsByClassName("playerImg");
-
     logHTML = document.getElementById("gameLog");
 }
 
-function playerSelect(hand) 
+function playerSelect(weapon) 
 {
-    playerSelected == hand ? playerSameSelect++ : (playerSelected = hand, playerSameSelect = 1);
-    playerSelected == 'rock' ? playerDecisionHTML.src="Images/rock.jpg" : 
+    playerSelected == weapon ? playerSameSelect++ : (playerSelected = weapon, playerSameSelect = 1);
     playerSelected == 'paper' ? playerDecisionHTML.src="Images/paper.jpg" :
+    playerSelected == 'rock' ? playerDecisionHTML.src="Images/rock.jpg" : 
     playerDecisionHTML.src="Images/scissors.png";
 
     let num = getRandomInt();
@@ -139,19 +136,6 @@ function playerSelect(hand)
         display();
     }, 1100);
 }
-
-function display() 
-{
-    playerDecisionHTML.src="Images/questionMark.jpg";
-    compDecisionHTML.src="Images/questionMark.jpg";
-    playerRockHTML.innerHTML = 'Rock - ' + playerRock;
-    playerPaperHTML.innerHTML = 'Paper - ' + playerPaper;
-    playerScissorHTML.innerHTML = 'Scissors - ' + playerScissor;
-
-    compRockHTML.innerHTML = 'Rock - ' + compRock;
-    compPaperHTML.innerHTML = 'Paper - ' + compPaper;
-    compScissorHTML.innerHTML = 'Scissor - ' + compScissor;
-}
 function checkInventory() 
 {
     playerRock == 0 ? playerImgHTML[0].removeAttribute('onclick') : playerImgHTML[0].setAttribute('onclick', "playerSelect('rock');");
@@ -173,6 +157,18 @@ function checkInventory()
         }
     }
 }
+function display() 
+{
+    playerDecisionHTML.src="Images/questionMark.jpg";
+    compDecisionHTML.src="Images/questionMark.jpg";
+    playerRockHTML.innerHTML = 'Rock - ' + playerRock;
+    playerPaperHTML.innerHTML = 'Paper - ' + playerPaper;
+    playerScissorHTML.innerHTML = 'Scissors - ' + playerScissor;
+
+    compRockHTML.innerHTML = 'Rock - ' + compRock;
+    compPaperHTML.innerHTML = 'Paper - ' + compPaper;
+    compScissorHTML.innerHTML = 'Scissor - ' + compScissor;
+}
 function reset() 
 {
     gameResultPlayer.innerHTML = '';
@@ -189,14 +185,14 @@ function reset()
 }
 function getRandomInt() 
 {
-    let assign = 
+    let give = 
     {
         0: compRock,
         1: compPaper,
         2: compScissor
     };
     let num = Math.floor(Math.random() * 3);
-    while (assign[num] <= 0) 
+    while (give[num] <= 0) 
     {
         num = Math.floor(Math.random() * 3);
     }
