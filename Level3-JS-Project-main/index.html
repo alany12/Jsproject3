@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initialize();">
+    <div id="outerContainer">
+        <div id="player">
+            <h2>Player</h2>
+            <h3 class="gameResult" id="playerResult"></h3>
+            <hr />
+
+            <div class="inventory">
+                <p id="playerR">Rock - 5</p>
+                <p id="playerP">Paper - 5</p>
+                <p id="playerS">Scissors - 5</p>
+                <img src="Images/rock.jpg" onclick="playerSelect('rock')" alt="rock" class="playerImg">
+                <img src="Images/paper.jpg" onclick="playerSelect('paper')" alt="paper" class="playerImg">
+                <img src="Images/scissors.png" onclick="playerSelect('scissors')" alt="scissor" class="playerImg">
+            </div>
+            <img class="decision" id="playerDecision" src="Images/questionMark.jpg" alt="Decision player made">
+        </div>
+        <div id="computer">
+            <h2>Computer</h2>
+            <h3 class="gameResult" id="computerResult"></h3>
+            <hr />
+
+            <div class="inventory">
+                <p id="compR">Rock - 5</p>
+                <p id="compP">Paper - 5</p>
+                <p id="compS">Scissors - 5</p>
+                <img src="Images/rock.jpg" alt="rock">
+                <img src="Images/paper.jpg" alt="paper">
+                <img src="Images/scissors.png" alt="scissor">
+            </div>
+            <img class="decision" id="compDecision" src="Images/questionMark.jpg" alt="Decision player made">
+        </div>
+    </div>
+
+    <div id="infoContainer">
+        <div id="rulesContainer">
+            <h4>Rules:</h4>
+            <ul>
+                <ol>Each player begins with 5 of each weapon(rock/paper/scissor)</ol>
+                <ol>Choose your weapon by clicking on the respective image.</ol>
+                <ol>Use the reset button to reset the game.</ol>
+            </ul>
+        </div>
+
+        <div id="logContainer">
+            <h4>Log:</h4>
+            <p id="gameLog">
+                
+            </p>
+        </div>
+        
+        <div id="resetContainer">
+            <button id="resetButton" onclick="reset();">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

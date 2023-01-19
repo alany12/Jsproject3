@@ -1,0 +1,88 @@
+#outerContainer 
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#player 
+{
+    width: 50%;
+    height: 50%;
+    border-right: solid #B87333 2px;
+    border-bottom: solid #B87333 2px;
+}
+
+#computer 
+{
+    width: 50%;
+    height: 50%;
+    border-bottom: solid #B87333 2px;
+}
+
+.inventory 
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    width: 40%;
+    margin: 50px auto;
+}
+.inventory img:hover 
+{
+    cursor: pointer;
+}
+.inventory p 
+{
+    text-align: center
+}
+.inventory img 
+{
+    width: 100px;
+    height: 100px;
+    border: solid #B87333 2px;
+}
+
+.decision 
+{
+    width: 30%;
+    height: 250px;
+    display: block;
+    margin: 0 auto;
+    border: solid #B87333 2px;
+}
+
+#infoContainer 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#infoContainer div 
+{
+    padding: 10px;
+}
+ol 
+{
+    padding-bottom: 10px;
+}
+#rulesContainer h4 
+{
+    text-align: center;
+    margin: 10px auto;
+}
+#logContainer h4 
+{
+    text-align: center;
+    margin: 10px auto;
+}
+#logContainer 
+{
+    border-left: solid #B87333 2px;
+    border-right: solid #B87333 2px;
+}
+#resetButton 
+{
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 200px;
+}
